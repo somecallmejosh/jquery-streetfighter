@@ -1,6 +1,7 @@
 var ryuStill = $('.ryu-still'),
     ryuReady = $('.ryu-ready'),
     ryuThrowing = $('.ryu-throwing'),
+    ryuCool = $('.ryu-cool'),
     hadouken = $('.hadouken');
 
 $('.ryu').on("mouseenter", function(){
@@ -28,6 +29,21 @@ $('.ryu').on("mouseenter", function(){
 }).on("mouseup", function(){
   $('.ryu-throwing, .ryu-still').hide();
   ryuReady.show();
+});
+
+$(document).keydown(function(e) {
+  // close pane if esc or x is pressed.
+  if (e.keyCode == 88) { 
+    ryuStill.hide();
+    ryuReady.hide();
+    ryuCool.show();
+  }
+}).keyup(function(f){
+  if (f.keyCode == 88) { 
+    ryuStill.show();
+    ryuReady.hide();
+    ryuCool.hide();
+  }
 });
 
 function playHadouken(){
