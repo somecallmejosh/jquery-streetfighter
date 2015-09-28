@@ -25,7 +25,7 @@ $('.ryu').on("mouseenter", function(){
     // value of 430px.
     $(this).hide();
     $(this).css('left', '430px');
-  });;
+  });
 }).on("mouseup", function(){
   $('.ryu-throwing, .ryu-still').hide();
   ryuReady.show();
